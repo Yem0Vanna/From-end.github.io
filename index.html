@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Page Food Shop</title>
+</head>
+<body>
+
+<header class="navbar">
+  <div class="logo"><img src="https://marketplace.canva.com/EAFpeiTrl4c/2/0/1600w/canva-abstract-chef-cooking-restaurant-free-logo-a1RYzvS1EFo.jpg" alt="img"></div>
+  <ul class="menu">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#grilled">Grilled</a></li>
+    <li><a href="#Contact">Contact</a></li>
+    <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+    <li class="shopping">
+      <span class="cart-count" id="cart-count">0</span>
+      <i class="fas fa-shopping-cart menu-icon"></i>
+    </li>
+    <li><a href="#" onclick="openLogin()">Login</a></li>
+    
+  </ul>
+</header>
+
+<section class="background-food" id="home">
+  <h2>Welcome to My Shop Food</h2><br><br>
+  <input type="search">
+</section>
+
+<!-- Login Modal -->
+<div id="loginModal" class="login-modal">
+  <div class="login-content">
+    <span class="close-btn" onclick="closeLogin()">&times;</span>
+    <h2>Login</h2>
+    <form onsubmit="return processLogin(event)">
+      <input type="text" id="username" placeholder="Username" required>
+      <input type="password" id="password" placeholder="Password" required>
+      <input type="submit" value="Enter">
+    </form>
+  </div>
+</div>
+
+
+<h2 class="menu-food" id="grilled">Menu the Food</h2>
+<section class="menu-container">
+  <div class="menu-item">
+    <img src="https://png.pngtree.com/png-clipart/20240414/original/pngtree-fresh-tasty-burger-isolated-on-white-background-png-image_14809539.png" alt="Burger">
+    <div class="menu-content">
+      <h2 class="menu-title">Classic Burger</h2>
+      <p class="menu-description">Juicy beef patty with lettuce, tomato, and cheese.</p>
+      <div class="menu-price">$8.99</div>
+      <button onclick="addToCart('Classic Burger', 8.99)">Order Now</button>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://www.freeiconspng.com/thumbs/pizza-png/pizza-png-31.png" alt="Pizza">
+    <div class="menu-content">
+      <h2 class="menu-title">Pepperoni Pizza</h2>
+      <p class="menu-description">Freshly baked pizza topped with pepperoni and mozzarella cheese.</p>
+      <div class="menu-price">$12.50</div>
+      <button onclick="addToCart('Pepperoni Pizza', 12.50)">Order Now</button>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://media.istockphoto.com/id/908165344/photo/pasta-with-meat-and-vegetables-on-white-background.jpg?s=612x612&w=0&k=20&c=zLxnClBbX6Azrd7Lud42pvQEQTjngPfIe5ElDCMroog=" alt="Pasta">
+    <div class="menu-content">
+      <h2 class="menu-title">Spaghetti Bolognese</h2>
+      <p class="menu-description">Traditional Italian pasta with rich meat sauce.</p>
+      <div class="menu-price">$10.75</div>
+      <button onclick="addToCart('Spaghetti Bolognese', 10.75)">Order Now</button>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://cu-media.imgix.net/media/catalog/product/cache/x1200/g/r/grilled_chicken_ceaser_salad.jpg?height=800&width=800&fit=crop&format=webp&cs=tinysrgb&lossless=true?w=3840" alt="Salad">
+    <div class="menu-content">
+      <h2 class="menu-title">Caesar Salad</h2>
+      <p class="menu-description">Crispy romaine lettuce with Caesar dressing and croutons.</p>
+      <div class="menu-price">$6.40</div>
+      <button onclick="addToCart('Caesar Salad', 6.40)">Order Now</button>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://png.pngtree.com/png-clipart/20231016/original/pngtree-fried-chicken-and-french-fries-on-plate-png-image_13322856.png" alt="fried chicken ">
+    <div class="menu-content">
+      <h2 class="menu-title">Fried chicken </h2>
+      <p class="menu-description">Fried Chicken And French Fries On Plate.</p>
+      <div class="menu-price">$8.50</div>
+      <button onclick="addToCart('Fried chicken ', 8.50)">Order Now</button>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="https://img.freepik.com/premium-photo/fried-rice-sri-lankan-dish-white-plate-white-background-directly-view_864588-12805.jpg" alt="fried rice">
+    <div class="menu-content">
+      <h2 class="menu-title">Fried Rice</h2>
+      <p class="menu-description">This fried rice recipe is super quick, made with egg, veggies and a handful of bacon.</p>
+      <div class="menu-price">$7.50</div>
+      <button onclick="addToCart('Fried Rice', 7.50)">Order Now</button>
+    </div>
+  </div>
+</section>
+
+<h3 class="cache" id="drink">Menu the Drink</h3>
+<div class="card-drink">
+  <div class="img-drink">
+    <img src="https://png.pngtree.com/png-clipart/20240306/original/pngtree-fresh-orange-juice-in-glass-cup-isolated-png-image_14526334.png" alt="Orange Juice">
+    <div class="menu-type">
+      <h2>Orange Juice</h2>
+      <p>Orange juice is a liquid extract of the orange tree fruit.</p>
+      <div class="price">$2.75</div>
+      <button onclick="addToCart('Orange Juice', 2.75)">Order Now</button>
+    </div>
+  </div>
+
+  <div class="img-drink">
+    <img src="https://atlas-content-cdn.pixelsquid.com/stock-images/coca-cola-glass-soda-nrdvoxB-600.jpg" alt="Coca-Cola">
+    <div class="menu-type">
+      <h2>Coca-Cola</h2>
+      <p>Coca-Cola is a globally recognized and beloved carbonated beverage, known for its distinct flavor and iconic brand image.</p>
+      <div class="price">$1.50</div>
+      <button onclick="addToCart('Caca-cola', 1.50)">Order Now</button>
+    </div>
+  </div>
+
+  <div class="img-drink">
+    <img src="https://i.pinimg.com/736x/0e/63/9a/0e639a2520663ebda3d28630fad240e7.jpg" alt="coffee">
+    <div class="menu-type">
+      <h2>Coffee</h2>
+      <p>Coffee is a beverage brewed from the roasted and ground seeds of the tropical evergreen coffee plant.</p>
+      <div class="price">$2.00</div>
+      <button onclick="addToCart('Coffee', 2.00)">Order Now</button>
+    </div>
+  </div>
+
+  <div class="img-drink">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKkVyYLMOCFw-DZW3gvu1jE01vTS7lqt6o_Q&s" alt="Ice Latte">
+    <div class="menu-type">
+      <h2>Ice Latte</h2>
+      <p>Iced Latte, with a single shot of Espresso, is the ideal choice for a cold coffee with milk for a more intense and refreshing flavor.</p>
+      <div class="price">$2.75</div>
+      <button onclick="addToCart('Ice Latte', 2.75)">Order Now</button>
+    </div>
+  </div>
+
+  <div class="img-drink">
+    <img src="https://png.pngtree.com/png-clipart/20240316/original/pngtree-iced-matcha-milk-tea-in-plastic-glass-watercolor-png-image_14597034.png" alt="tea matcha">
+    <div class="menu-type">
+      <h2>Tea Matcha</h2>
+      <p>Matcha is a finely ground powder of green tea, typically made from shade-grown tea leaves.</p>
+      <div class="price">$3.00</div>
+      <button onclick="addToCart('Tea Matcha', 3.00)">Order Now</button>
+    </div>
+  </div>
+
+  <div class="img-drink">
+    <img src="https://image.made-in-china.com/202f0j00KfekDNZAMHro/Custom-Logo-Frosted-Clear-Disposable-Smoothie-PP-Hard-Cup-Plastic-Drink-U-Shape-Bubble-Milk-Tea-Cup.webp" alt="passion Cream">
+    <div class="menu-type">
+      <h2>Passion Cream</h2>
+      <p>Iced passion fruit background topping with cream cheese foam.</p>
+      <div class="price">$2.50</div>
+      <button onclick="addToCart('Passion Cream', 2.50)">Order Now</button>
+    </div>
+  </div>
+
+  <div class="img-drink">
+    <img src="https://aeoncambodia.sgp1.digitaloceanspaces.com/image/catalog/product/2323526000001-d.jpg" alt="Tea Kuch">
+    <div class="menu-type">
+      <h2>Tea Kuch</h2>
+      <p>"Kuch Tea" likely refers to a type of milk tea, a popular beverage, particularly in places like Cambodia.</p>
+      <div class="price">$1.85</div>
+      <button onclick="addToCart('Tea Kuch', 1.85)">Order Now</button>
+    </div>
+  </div>
+
+  <div class="img-drink">
+    <img src="https://png.pngtree.com/png-clipart/20231019/original/pngtree-ice-tea-on-plastic-cup-with-lemon-side-view-generative-ai-png-image_13358198.png" alt="Lemon Tea">
+    <div class="menu-type">
+      <h2>Lemon</h2>
+      <p>Lemon tea is a beverage made by steeping tea leaves in hot water and adding lemon juice or slices for flavor and potential health benefits.</p>
+      <div class="price">$1.25</div>
+      <button onclick="addToCart('Lemon', 1.25)">Order Now</button>
+    </div>
+  </div>
+</div>
+
+
+<h3 class="tree">Menu the Cake</h3>
+<div class="card-cake">
+  <div class="img-cake">
+    <img src="https://cakeshopco.com/assets/l1.png" alt="Cake">
+    <div class="type-cake">
+      <h2>Cake</h2>
+      <p>Discover the art of cake-making with our stunning and delicious creations, crafted to perfection for any occasion.</p>
+      <div class="price-1">$4.50</div>
+      <button onclick="addToCart('Cake', 4.50)">Order Now</button>
+    </div>
+  </div>
+
+  <div class="img-cake">
+    <img src="https://cakeshopco.com/assets/l2.png" alt="Crosong">
+    <div class="type-cake">
+      <h2>Crosong</h2>
+      <p>Experience culinary excellence at our renowned restaurant, where sophistication meets flavor. </p>
+      <div class="price-1">$2.00</div>
+      <button onclick="addToCart('Crosong', 2.00)">Order Now</button>
+    </div>
+  </div>
+
+  <div class="img-cake">
+    <img src="https://cakeshopco.com/assets/l3.png" alt="Cookies">
+    <div class="type-cake">
+      <h2>Cookies</h2>
+      <p>Indulge in the irresistible charm of our freshly baked cookies, crafted with love and the finest ingredients. </p>
+      <div class="price-1">$2.25</div>
+      <button onclick="addToCart('Cookies', 2.25)">Order Now</button>
+    </div>
+  </div>
+
+  <div class="img-cake">
+    <img src="https://cakeshopco.com/assets/l4.png" alt="Flower">
+    <div class="type-cake">
+      <h2>Flower</h2>
+      <p>Transform your celebrations into unforgettable experiences with our party organization services.</p>
+      <div class="price-1">$4.00</div>
+      <button onclick="addToCart('Flower', 4.00)">Order Now</button>
+    </div>
+  </div>
+
+  <div class="img-cake">
+    <img src="https://c4.wallpaperflare.com/wallpaper/736/476/880/cake-raspberry-chocolate-dessert-wallpaper-preview.jpg" alt="Chocolate cake">
+    <div class="type-cake">
+      <h2>Chocolate cake</h2>
+      <p>chocolate cake is a cake made with chocolate or cocoa.</p>
+      <div class="price-1">$4.75</div>
+      <button onclick="addToCart('Chocolate cake', 4.75)">Order Now</button>
+    </div>
+  </div>
+
+  <div class="img-cake">
+    <img src="https://sweetfreedombakeshop.com/wp-content/uploads/Tiramisu-Cupcake-e1625512229144-375x400.jpg" alt="Cupcake">
+    <div class="type-cake">
+      <h2>Cupcake</h2>
+      <p>It's beautiful and delicious and smells like cake</p>
+      <div class="price-1">$2.50</div>
+      <button onclick="addToCart('Cupcake', 2.50)">Order Now</button>
+    </div>
+  </div>
+</div>
+
+<div class="edit">
+  <div class="about" id="about">About Us</div>
+  <p>Our shop has been operating since 2020, offering high-quality and delicious food, fresh fruit juices, coffee and beverages, as well as handmade desserts. Thank you for your support!</p>
+</div>
+
+<footer id="Contact">
+  <p>2025 ហាងអាហារយើងខ្ញុំ. រក្សាសិទ្ធិគ្រប់យ៉ាង។</p>
+</footer>
+
+
+
+<script>
+  let cartCount = 0;
+  function addToCart() {
+    cartCount++;
+    document.getElementById("cart-count").innerText = cartCount;
+  }
+</script>
+
+<script>
+  function openLogin() {
+    document.getElementById("loginModal").style.display = "block";
+  }
+
+  function closeLogin() {
+    document.getElementById("loginModal").style.display = "none";
+  }
+
+  function processLogin(event) {
+    event.preventDefault();
+    const user = document.getElementById("username").value;
+    const pass = document.getElementById("password").value;
+
+    if (user === "admin" && pass === "1234") {
+      alert("Login ជោគជ័យ!");
+      closeLogin();
+    } else {
+      alert("ឈ្មោះអ្នកប្រើ ឬ ពាក្យសម្ងាត់ មិនត្រឹមត្រូវទេ!");
+    }
+  }
+
+  window.onclick = function(event) {
+    const modal = document.getElementById("loginModal");
+    if (event.target === modal) {
+      modal.style.display = "none";
+    }
+  }
+</script>
+</body>
+</html>

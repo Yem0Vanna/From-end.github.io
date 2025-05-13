@@ -1,0 +1,497 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #fff8f0;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #724130;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  .shopping{
+    position: relative;
+  }
+
+  .cart-count {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    background: yellow;
+    color: black;
+    border-radius: 50%;
+    padding: 2px 7px;
+    font-size: 12px;
+    font-weight: bold;
+  }
+  /* Login Modal Styles */
+  .login-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(10, 10, 10, 0.6);
+  }
+
+  .login-content {
+    background-image: url('https://static.vecteezy.com/system/resources/thumbnails/036/226/872/small/ai-generated-nature-landscapes-background-free-photo.jpg');
+    margin: 10% auto;
+    padding: 20px;
+    width: 300px;
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+  }
+  .login-content{
+    color: blue;
+
+  }
+
+  .login-content input[type="text"],
+  .login-content input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+  }
+
+  .login-content input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: blue;
+    border: none;
+    color: white;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 10px; right: 15px;
+    font-size: 20px;
+    cursor: pointer;
+    color: red;
+  }
+
+  .login-content h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  /* Sample Section */
+  section.card-food {
+    padding: 50px;
+    text-align: center;
+    background: #fdf5ef;
+  }
+
+  input[type="search"] {
+    padding: 10px;
+    width: 50%;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+  }
+  
+  .logo img {
+    height: 60px;
+    width: auto;
+    border-radius: 8px;
+  }
+  .background-food {
+    background-image: url('https://homedecoram.com/cdn/shop/files/02copy_4575f6e5-dca5-4a0d-b21c-c66b5722464d_1445x.jpg?v=1685711217');
+    padding: 3rem 2rem;
+    text-align: center;
+    border-radius: 12px;
+    margin: 2rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .background-food h2 {
+    font-size: 2.5rem;
+    color: #C5172E;
+    margin-bottom: 1.5rem;
+  }
+  
+  .background-food input[type="search"] {
+    width: 300px;
+    max-width: 90%;
+    padding: 12px 20px;
+    font-size: 1rem;
+    border: 2px solid #ff7f50;
+    border-radius: 30px;
+    outline: none;
+    transition: all 0.3s;
+  }
+  
+  .background-food input[type="search"]:focus {
+    border-color: blue;
+    box-shadow: 0 0 8px rgba(255, 87, 34, 0.5);
+  }
+  
+  
+  .menu {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+  }
+  
+  .menu li {
+    display: inline-block;
+  }
+  
+  .menu a {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 8px 15px;
+    border-radius: 6px;
+    transition: background 0.3s, color 0.3s;
+  }
+  
+  .menu a:hover {
+    background-color: #ff5722;
+    color: #fff;
+  }
+  .src a{
+    background-color: #fff !important;
+    color: #333 !important;
+    font-weight: bold;
+  }
+  
+  .menu-container {
+    gap: 10px;
+    padding: 2rem;
+    overflow: auto;
+    width: 100vw;
+    display: flex;
+    background-image: url('https://png.pngtree.com/background/20250105/original/pngtree-smiling-cartoon-chef-holding-a-board-in-a-restaurant-kitchen-picture-image_15286197.jpg');
+  }
+  .menu-food{
+    width: 100%;
+    text-align: center;
+    color: blue;
+  }
+  
+  .menu-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    width: 300px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .menu-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  .menu-item img {
+    width: 300px;
+    object-fit: cover;
+    border-radius: 15px;
+  }
+  
+  .menu-content {
+    padding: 1rem;
+  }
+  
+  .menu-title {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+  }
+  
+  .menu-description {
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 1rem;
+  }
+  
+  .menu-price {
+    font-size: 0.9rem;
+    color: rgb(143, 45, 45);
+    font-weight: bold;
+    
+  }
+  .menu-item button{
+    background-color: blue;
+    color: #fff;
+    font-size: 10px;
+    padding: 8px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+  }
+  .menu-item button:hover{
+    background-color: rgb(81, 81, 156);
+  }
+  
+  @media (max-width: 768px) {
+    .navbar {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .menu {
+      flex-direction: column;
+      width: 100%;
+      margin-top: 10px;
+    }
+  
+    .menu li {
+      width: 100%;
+    }
+  
+    .menu a {
+      display: block;
+      width: 100%;
+    }
+  }
+/* Type Drink */
+.cache{
+  font-size: 1.5rem;
+  color: blue;
+  width: 100%;
+  text-align: center;
+}
+.card-drink{
+  gap: 10px;
+  padding: 2rem;
+  overflow: auto;
+  width: 100vw;
+  display: flex;
+  background-image: url('https://media.istockphoto.com/id/1162005557/vector/sketch-cocktail-background-hand-drawn-alcohol-cocktails-drinks-bar-menu-cold-drinking.jpg?s=612x612&w=0&k=20&c=ZckdBIhiGQOQra9kDyJpXY2OFtUPIidICC8bJbgPrwI=');
+}
+.img-drink{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  width: 300px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.img-drink:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.img-drink img {
+  width: 300px;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.menu-type{
+  padding: 1rem;
+}
+
+.menu-type h2 {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.menu-type p {
+  font-size: 0.8rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.price {
+  font-size: 0.9rem;
+  color: rgb(143, 45, 45);
+  font-weight: bold;
+  
+}
+.card-drink button{
+  background-color: blue;
+  color: #fff;
+  font-size: 10px;
+  padding: 8px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+.card-drink button:hover{
+  background-color: rgb(109, 47, 73);
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .menu {
+    flex-direction: column;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .menu li {
+    width: 100%;
+  }
+
+  .menu a {
+    display: block;
+    width: 100%;
+  }
+}
+
+
+/* Menu Cake */
+.tree{
+  font-size: 1.5rem;
+  color: blue;
+  width: 100%;
+  text-align: center;
+}
+.card-cake{
+  gap: 10px;
+  padding: 2rem;
+  overflow: auto;
+  width: 100vw;
+  display: flex;
+  background-image: url('https://i.pinimg.com/736x/c3/7f/59/c37f5990ec6e5f46d7bd6a0382454f18.jpg');
+}
+.img-cake{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  width: 300px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.img-cake:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.img-cake img {
+  width: 300px;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.type-cake{
+  padding: 1rem;
+}
+
+.type-cake h2 {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.type-cake p {
+  font-size: 0.8rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.price-1 {
+  font-size: 0.9rem;
+  color: rgb(143, 45, 45);
+  font-weight: bold;
+  
+}
+.card-cake button{
+  background-color: blue;
+  color: #fff;
+  font-size: 10px;
+  padding: 8px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+.card-cake button:hover{
+  background-color: rgb(109, 47, 73);
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .menu {
+    flex-direction: column;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .menu li {
+    width: 100%;
+  }
+
+  .menu a {
+    display: block;
+    width: 100%;
+  }
+}
+.edit {
+  max-width: 900px;
+  margin: 50px auto;
+  background-color: azure;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+}
+
+.edit .about {
+  font-size: 32px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #d35400;
+  border-bottom: 2px solid #f5cba7;
+  padding-bottom: 10px;
+}
+
+.edit p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #333;
+  text-align: justify;
+}
+footer {
+  background-color: #e67e22;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+
